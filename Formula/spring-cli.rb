@@ -1,21 +1,21 @@
-# Generated with JReleaser 1.7.0 at 2023-07-11T09:27:01.753788719Z
+# Generated with JReleaser 1.7.0 at 2023-07-11T12:53:19.118816145Z
 class SpringCli < Formula
   desc "Spring Cli"
   homepage "https://github.com/rd-1-2022/spring-cli-jr"
-  url "https://github.com/rd-1-2022/spring-cli-jr/releases/download/v0.0.6/spring-cli-0.0.6.zip"
-  version "0.0.6"
-  sha256 "11fc6825b3ae618db12d96e701fd9db1fe2d05b0529a86d7b1f0814a6d7352a1"
+  url "https://github.com/rd-1-2022/spring-cli-jr/releases/download/v0.0.7/spring-cli-0.0.7.zip"
+  version "0.0.7"
+  sha256 "f0e38b9560d422164df1c7ed51f4e2e1a6237779652061b3d4d871ba71dc97e0"
   license "Apache-2.0"
 
   depends_on "openjdk@17"
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink "#{libexec}/bin/spring-cli" => "spring-cli"
+    bin.install_symlink "#{libexec}/bin/spring" => "spring"
   end
 
   test do
-    output = shell_output("#{bin}/spring-cli --version")
-    assert_match "0.0.6", output
+    output = shell_output("#{bin}/spring --version")
+    assert_match "0.0.7", output
   end
 end
